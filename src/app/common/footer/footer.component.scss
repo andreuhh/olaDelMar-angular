@@ -1,0 +1,158 @@
+@import '../../../assets/styles/variables';
+
+.footer {
+  background-color: $black;
+  color: $white;
+  font-size: .7rem;
+  padding-top: 5%;
+
+  &__logoContainer {
+    width: 20%;
+    position: relative;
+    bottom: 20%;
+    left: 9%;
+
+
+  }
+
+  &__container {
+    display: flex;
+    padding: 2% 8% 8% 8%;
+    justify-content: space-between;
+
+    &__col {
+      margin: 0 20px;
+    }
+
+    &__col--1 {
+      width: 22%;
+      text-align: left;
+    }
+
+    &__col--2 {
+      width: 56%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .smallCol {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        padding: 5px 0;
+      }
+
+      a:hover {
+        color: $lightRed;
+        transition: $transition;
+      }
+    }
+
+    &__col--3 {
+      width: 22%;
+      text-align: left;
+    }
+
+    .iconsContainer {
+      width: 60%;
+      padding-top: 5%;
+      font-size: .9rem;
+      display: flex;
+      justify-content: space-between;
+
+      a {
+        color: $white;
+      }
+
+      a:hover {
+        color: $lightRed;
+        transition: $transition;
+      }
+    }
+  }
+}
+
+//  MEDIA QUERY
+@media (max-width: 1150px) {
+  .footer {
+    &__logoContainer {
+      width: 25%;
+      height: 5.3vh;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__logoContainer {
+      width: 25%;
+      height: 5.3vh;
+      left: 3%;
+    }
+
+    &__container {
+      padding: 2% 2% 8% 2%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__logoContainer {
+      margin-top: 20px;
+      width: 25%;
+      left: 3%;
+    }
+
+    &__container {
+      padding: 2% 2% 8% 2%;
+      flex-direction: column;
+
+      &__col {
+        margin: 10px 20px;
+      }
+
+      &__col--1 {
+        width: 90%;
+        text-align: left;
+      }
+
+      &__col--2 {
+        width: 90%;
+        //background-color: red; 
+        display: flex;
+        justify-content: space-between;
+
+        .smallCol {
+          //background-color: red;
+          width: 100%;
+        }
+      }
+
+      &__col--3 {
+        width: 90%;
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 414px) {
+  .footer {
+    &__logoContainer {
+      width: 30%;
+    }
+
+    &__container {
+      padding: 8% 0% 8% 0%;
+
+      &__col--2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+      }
+    }
+  }
+}

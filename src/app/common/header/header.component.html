@@ -1,1 +1,35 @@
-<p>header works!</p>
+<div class="header">
+    <div class="header__logo">
+      <a routerLink="">
+        <!--<img src="../../../assets/img/logo.png" width="90%" height="auto" alt="logo cercacasa.it">-->
+        <h5>Logo</h5>
+      </a>
+    </div>
+
+    <ul class="{{this.hamburgerMenuOpen ? 'header__menu--open' : 'header__menu'}}">
+      <li><a>Residenziale</a></li>
+      <li><a>Vacanza</a></li>
+      <li><a>Commerciale</a></li>
+      <li><a>News</a></li>
+      <li><a routerLink="/trova" class="bold">Cerca per agenzia</a></li>
+
+      <li id="activeMobile1" class="{{this.hamburgerMenuOpen ? 'showMobile' : 'hideDesktop'}}">
+        <a>Area personale</a>
+      </li>
+      <li id="activeMobile2" class="{{this.hamburgerMenuOpen ? 'showMobile' : 'hideDesktop'}} activeMobile">
+        <a>Agenzie</a>
+      </li>
+    </ul>
+    <div class="header__cta">
+      <i class="far fa-heart"></i><span><a href="">Area personale</a></span>
+
+      <a href="" class="header__cta--btn">Agenzie</a>
+    </div>
+
+
+    <div (click)="this.clickMenu()" class="hamburger">
+      <!--<i class="fas fa-bars"></i>-->
+      <i class="{{this.hamburgerMenuOpen ? 'fas fa-times' : 'fas fa-bars'}}"></i>
+    </div>
+  
+  </div>

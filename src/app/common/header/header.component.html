@@ -1,29 +1,43 @@
+<div class="topBar">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p>Free shipping from 80€</p>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="header">
+  
     <div class="header__logo">
       <a routerLink="">
-        <!--<img src="../../../assets/img/logo.png" width="90%" height="auto" alt="logo cercacasa.it">-->
-        <h5>Logo</h5>
+        <img src="../../../assets/images/logo.png" width="190px" height="71px" alt="logo">
+        
       </a>
     </div>
 
     <ul class="{{this.hamburgerMenuOpen ? 'header__menu--open' : 'header__menu'}}">
-      <li><a>Residenziale</a></li>
-      <li><a>Vacanza</a></li>
-      <li><a>Commerciale</a></li>
-      <li><a>News</a></li>
-      <li><a routerLink="/trova" class="bold">Cerca per agenzia</a></li>
+      <li><a>About</a></li>
+      <li><a>Shop</a></li>
+      <li><a>Contact</a></li>
 
-      <li id="activeMobile1" class="{{this.hamburgerMenuOpen ? 'showMobile' : 'hideDesktop'}}">
-        <a>Area personale</a>
-      </li>
+      
       <li id="activeMobile2" class="{{this.hamburgerMenuOpen ? 'showMobile' : 'hideDesktop'}} activeMobile">
-        <a>Agenzie</a>
+        <a>Admin</a>
+      </li>
+      <li id="activeMobile1" class="{{this.hamburgerMenuOpen ? 'showMobile' : 'hideDesktop'}}">
+        <a>Cart</a>
       </li>
     </ul>
     <div class="header__cta">
-      <i class="far fa-heart"></i><span><a href="">Area personale</a></span>
+      <i class="fas fa-users-cog"></i><span><a href="">Admin</a></span>
 
-      <a href="" class="header__cta--btn">Agenzie</a>
+      <a href="" class="header__cta--btn">
+        <p>Cart</p>
+        <div class="circle">
+          <p>2</p>
+        </div>
+      </a>
     </div>
 
 

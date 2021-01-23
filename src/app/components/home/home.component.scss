@@ -1,0 +1,50 @@
+@import '../../../assets/styles/variables';
+
+.hero {
+  width: 100%;
+  height: 750px;
+  background: linear-gradient(#708a964f, #9198e536), url(../../../assets/images/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  .patina {
+    width: 100%;
+    height: 750px;
+    background-color: black;
+    opacity: .3;
+  }
+
+  &__cta {
+    //background-color: red;
+    position: relative;
+    width: 600px;
+    top: 40%;
+    left: 10%;
+    color: $white;
+
+    &__btnCont {
+      button {
+        margin-top: 20px;
+        color: $black;
+        border: none;
+        width: 200px;
+        padding: 15px 0;
+        font-size: 1.2rem;
+
+
+        &:first-of-type {
+          margin-right: 20px;
+          background-color: $white;
+        }
+
+        &:nth-child(2) {
+          border: 3px solid $white;
+          background-color: transparent;
+          color: $white;
+        }
+      }
+    }
+  }
+}

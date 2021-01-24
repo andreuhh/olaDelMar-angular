@@ -1,0 +1,21 @@
+@import '../../../assets/styles/variables';
+
+.productImg {
+  background-image: url(../../../assets/images/mascherinaBlu.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+
+button {
+  border: none;
+  background-color: $black;
+  color: $white;
+  padding: 10px 20px;
+}
+
+input {
+  margin-left: 20px;
+  padding: 8px 10px;
+}

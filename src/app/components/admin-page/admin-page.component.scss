@@ -14,10 +14,21 @@
   .imgCont {
     width: 200px;
     height: 200px;
-    background-image: url(../../../assets/images/t-shirt.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    &--1 {
+      background-image: url(../../../assets/images/t-shirt.jpg);
+    }
+
+    &--2 {
+      background-image: url(../../../assets/images/cappello_2.jpg);
+    }
+
+    &--3 {
+      background-image: url(../../../assets/images/felpa_azzurra.jpg);
+    }
   }
 
   .remove a {

@@ -36,12 +36,27 @@
 // CARD
 .cardItem {
   .imgCont {
-    background-image: url(../../../assets/images/mascherinaBlu.jpg);
     width: 100%;
-    height: 200px;
+    height: 250px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    &--1 {
+      background-image: url(../../../assets/images/mascherinaBlu.jpg);
+    }
+
+    &--2 {
+      background-image: url(../../../assets/images/t-shirt.jpg);
+    }
+
+    &--3 {
+      background-image: url(../../../assets/images/zainone.jpg);
+    }
+
+    &--4 {
+      background-image: url(../../../assets/images/felpa.jpg);
+    }
   }
 
   button {

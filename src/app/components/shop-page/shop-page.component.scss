@@ -1,0 +1,80 @@
+@import '../../../assets/styles/variables';
+
+.searchBar {
+  input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid $lightBlue;
+  }
+
+  button {
+    border: none;
+    padding: 10px 20px;
+    background-color: $lightBlue;
+    color: $white;
+  }
+}
+
+@media (max-width: 540px) {
+  .searchBar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    input {
+      width: 100%;
+
+      &:last-of-type {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// CARD
+.cardItem {
+  .imgCont {
+    background-image: url(../../../assets/images/mascherinaBlu.jpg);
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  button {
+    border: 1px solid $black;
+    background-color: transparent;
+    color: $black;
+    outline: none;
+    color: $black;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    transition: .3s ease-in;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+      border: none;
+    }
+  }
+}
+
+.goToShop {
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.2rem;
+
+  i,
+  a {
+    color: $lightRed;
+  }
+
+  a {
+    margin-right: 15px;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+}

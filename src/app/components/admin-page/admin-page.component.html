@@ -11,45 +11,27 @@
         <div class="col-lg-2 mb-4"></div>
     </div>
 
-    <div class="row singleItem">
-        <div class="col-lg-6 productDetail">
-            <div class="imgCont imgCont--1"></div>
-            <h6 class="pl-5">Nome Prodotto + img</h6>
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-2 remove">
-            <a><i class="fas fa-times"><span>Remove</span></i></a>
-        </div>
-    </div>
-
-    <div class="row singleItem">
-        <div class="col-lg-6 productDetail">
-            <div class="imgCont imgCont--2"></div>
-            <h6 class="pl-5">Nome Prodotto + img</h6>
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-2 remove">
-            <a><i class="fas fa-times"><span>Remove</span></i></a>
-        </div>
-    </div>
-
-    <div class="row singleItem">
-        <div class="col-lg-6 productDetail">
-            <div class="imgCont imgCont--3"></div>
-            <h6 class="pl-5">Nome Prodotto + img</h6>
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-        <div class="col-lg-2"></div>
-        <div class="col-lg-2 remove">
-            <a><i class="fas fa-times"><span>Remove</span></i></a>
-        </div>
-    </div>
-
+    <ng-container *ngIf="products?.length > 0;else noProducts">
+        <ng-container *ngFor="let product of products">
+            <div class="row singleItem">
+                <div class="col-lg-6 productDetail">
+                    <div class="imgCont imgCont--1"></div>
+                    <h6 class="pl-5">{{product.id}}{{product.name}}</h6>
+                </div>
+                <div class="col-lg-2">{{product.price}} €</div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-2 remove">
+                    <a><i class="fas fa-times"><span>Remove</span></i></a>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container> 
+    <ng-template #noProducts>
+        <h4>Attualmente non ci sono prodotti nello shop</h4>
+    </ng-template>   
 
     <!-- Admin form -->
-    <div class="form-group">
+    <!--<div class="form-group">
         <input [(ngModel)]="name" type="text" class="form-control" placeholder="Product name">
     </div>
     <div class="form-group">
@@ -69,7 +51,9 @@
     </div>
     <div class="form-group">
         <h5>{{this.message}}</h5>
-    </div>
+    </div>-->
+
+    <app-admin-form></app-admin-form>
 
 </div>
 

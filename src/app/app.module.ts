@@ -18,6 +18,7 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { FormsModule } from '@angular/forms';
 
 import { CrudService } from './service/crud.service';
+import { AdminFormComponent } from './common/admin-form/admin-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CrudService } from './service/crud.service';
     ShopPageComponent,
     DetailComponent,
     CartComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    AdminFormComponent
   ],
   imports: [
     BrowserModule,

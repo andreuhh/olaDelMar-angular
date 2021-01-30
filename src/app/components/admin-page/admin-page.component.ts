@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CrudService } from '../../service/crud.service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-admin-page',
@@ -14,16 +15,23 @@ export class AdminPageComponent implements OnInit {
   name: string;
   price: number;
 
+  products: Product[];
+
   message: string;
 
   constructor(
     public crudService: CrudService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    //brad
+    this.crudService.getItems().subscribe(allProducts => {
+      console.log(allProducts);
+      this.products = allProducts;
+    });
   }
 
-  createProduct() {
+  /*createProduct() {
     let Product = {};
     Product['category'] = this.category;
     Product['description'] = this.description;
@@ -43,6 +51,6 @@ export class AdminPageComponent implements OnInit {
     }).catch(error => {
       console.log(error);
     })
-  }
+  }*/
 
 }

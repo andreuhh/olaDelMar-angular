@@ -8,8 +8,10 @@ import { CrudService } from '../../service/crud.service';
   styleUrls: ['./admin-page.component.scss']
 })
 export class AdminPageComponent implements OnInit {
-  name: string;
+  category: string;
   description: string;
+  imgUrl: string;
+  name: string;
   price: number;
 
   message: string;
@@ -23,12 +25,17 @@ export class AdminPageComponent implements OnInit {
 
   createProduct() {
     let Product = {};
-    Product['name'] = this.name;
+    Product['category'] = this.category;
     Product['description'] = this.description;
+    Product['imgUrl'] = this.imgUrl;
+    Product['name'] = this.name;
     Product['price'] = this.price;
 
     this.crudService.create_Newproduct(Product).then(res => {
+      //remove input fields after submit
       this.name = "";
+      this.category = "";
+      this.imgUrl = "";
       this.description = "";
       this.price = undefined;
       console.log(res);

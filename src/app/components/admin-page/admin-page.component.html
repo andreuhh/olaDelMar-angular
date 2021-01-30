@@ -50,16 +50,22 @@
 
     <!-- Admin form -->
     <div class="form-group">
-        <input [(ngModel)]="name" type="text" class="form-control" placeholder="Enter Employee name">
+        <input [(ngModel)]="name" type="text" class="form-control" placeholder="Product name">
     </div>
     <div class="form-group">
-        <input [(ngModel)]="description" type="text" class="form-control" placeholder="Enter Employee description">
+        <input [(ngModel)]="category" type="text" class="form-control" placeholder="Product category">
     </div>
     <div class="form-group">
-        <input [(ngModel)]="price" type="number" class="form-control" placeholder="Enter Employee price">
+        <input [(ngModel)]="imgUrl" type="file" class="form-control" placeholder="Product imgUrl">
     </div>
     <div class="form-group">
-        <button (click)="createProduct()" [disabled]="!name || !description || !price">Add product</button>
+        <input [(ngModel)]="description" type="text" class="form-control" placeholder="Product description">
+    </div>
+    <div class="form-group">
+        <input [(ngModel)]="price" type="number" class="form-control" placeholder="Product price">
+    </div>
+    <div class="form-group">
+        <button (click)="createProduct()" [disabled]="!name || !category || !imgUrl || !description || !price">Add product</button>
     </div>
     <div class="form-group">
         <h5>{{this.message}}</h5>

@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/styles.scss"
-              
             ],
             "scripts": []
           },
@@ -122,8 +121,13 @@
               "devServerTarget": "ecommerce-project:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ecommerce-project"
 }

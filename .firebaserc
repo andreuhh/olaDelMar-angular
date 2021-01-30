@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ecommerce-s2i": {
+      "hosting": {
+        "ecommerce-project": [
+          "ecommerce-s2i"
+        ]
+      }
+    }
+  }
+}

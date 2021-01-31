@@ -4,6 +4,9 @@ import { Product } from '../../models/product';
 import { FormsModule } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 
+//import { finalize } from 'rxjs/operators';
+//import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-admin-form',
   templateUrl: './admin-form.component.html',
@@ -18,7 +21,12 @@ export class AdminFormComponent implements OnInit {
     price: undefined,
   }
 
+  imgProvaPath: any;
+
   path: String;
+
+  //downloadURL?: Observable<string>;
+  //fb: any; //vedere
 
   constructor(
     private crudService: CrudService,
@@ -44,7 +52,10 @@ export class AdminFormComponent implements OnInit {
       this.product.price = undefined;
     }
 
+
     this.af.upload("/files" + Math.random() + this.path, this.path);
+
+    console.log(this.imgProvaPath)
   }
 
   /*upload($event) {

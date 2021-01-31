@@ -9,15 +9,10 @@ import { Product } from '../../models/product';
   styleUrls: ['./admin-page.component.scss']
 })
 export class AdminPageComponent implements OnInit {
-  category: string;
-  description: string;
-  imgUrl: string;
-  name: string;
-  price: number;
 
   products: Product[];
-
-  message: string;
+  editState: boolean = false;
+  productToEdit: Product;
 
   constructor(
     public crudService: CrudService
@@ -31,26 +26,24 @@ export class AdminPageComponent implements OnInit {
     });
   }
 
-  /*createProduct() {
-    let Product = {};
-    Product['category'] = this.category;
-    Product['description'] = this.description;
-    Product['imgUrl'] = this.imgUrl;
-    Product['name'] = this.name;
-    Product['price'] = this.price;
+  deleteProduct(event, product: Product) {
+    this.clearState();
+    this.crudService.deleteProduct(product);
+  }
 
-    this.crudService.create_Newproduct(Product).then(res => {
-      //remove input fields after submit
-      this.name = "";
-      this.category = "";
-      this.imgUrl = "";
-      this.description = "";
-      this.price = undefined;
-      console.log(res);
-      this.message = "new product saved correctly !";
-    }).catch(error => {
-      console.log(error);
-    })
-  }*/
+  editProduct(event, product: Product) {
+    this.editState = true;
+    this.productToEdit = product;
+  }
+
+  updateProduct(product: Product) {
+    this.crudService.updateProduct(product);
+    this.clearState();
+  }
+
+  clearState() {
+    this.editState = false;
+    this.productToEdit = null;
+  }
 
 }

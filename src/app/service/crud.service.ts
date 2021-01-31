@@ -10,12 +10,12 @@ import { map } from "rxjs/operators";
 export class CrudService {
   productsCollection: AngularFirestoreCollection<Product>;
   products: Observable<Product[]>;
+  productDoc: AngularFirestoreDocument<Product>;
 
-  // brad
   constructor(public fireservicies: AngularFirestore) {
     //this.products = this.fireservicies.collection('shopitem').valueChanges();
 
-    this.productsCollection = this.fireservicies.collection('shopitem');
+    this.productsCollection = this.fireservicies.collection('shopitem', ref => ref.orderBy('name', 'asc'));
 
     this.products = this.productsCollection.snapshotChanges().pipe(map(changes => {
       return changes.map(a => {
@@ -26,20 +26,24 @@ export class CrudService {
     }));
   }
 
-  // brad
   getItems() {
     return this.products;
   }
 
-  //brad
   addItem(product: Product) {
     this.productsCollection.add(product);
   }
 
-  // old
-  /*create_Newproduct(Product) {
-    return this.fireservicies.collection('shopitem').add(Product);
-  }*/
+  deleteProduct(product: Product) {
+    this.productDoc = this.fireservicies.doc(`shopitem/${product.id}`);
+    this.productDoc.delete();
+  }
+
+  updateProduct(product: Product) {
+    this.productDoc = this.fireservicies.doc(`shopitem/${product.id}`);
+    this.productDoc.update(product);
+  }
+
 }
 
 

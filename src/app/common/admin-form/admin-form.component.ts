@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../service/crud.service';
 import { Product } from '../../models/product';
 import { FormsModule } from '@angular/forms';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-admin-form',
@@ -17,12 +18,19 @@ export class AdminFormComponent implements OnInit {
     price: undefined,
   }
 
+  path: String;
 
   constructor(
-    private crudService: CrudService
+    private crudService: CrudService,
+    private af: AngularFireStorage
   ) { }
 
   ngOnInit(): void {
+
+  }
+
+  upload($event) {
+    this.path = $event.target.files[0]
   }
 
   onSubmit() {
@@ -35,5 +43,16 @@ export class AdminFormComponent implements OnInit {
       this.product.description = "";
       this.product.price = undefined;
     }
+
+    this.af.upload("/files" + Math.random() + this.path, this.path);
   }
+
+  /*upload($event) {
+    this.path = $event.target.files[0]
+  }*/
+
+  /*uploadImage() {
+    console.log(this.path);
+    this.af.upload("/files" + Math.random() + this.path, this.path);
+  }*/
 }

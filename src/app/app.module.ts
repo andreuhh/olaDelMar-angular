@@ -6,6 +6,8 @@ import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/da
 import { environment } from '../environments/environment'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { AngularFireStorageModule } from '@angular/fire/storage';//
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
@@ -39,6 +41,7 @@ import { AdminFormComponent } from './common/admin-form/admin-form.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [CrudService],
   bootstrap: [AppComponent]

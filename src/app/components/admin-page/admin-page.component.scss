@@ -5,6 +5,16 @@
   //border-bottom: 1px solid $gray;
   padding: 20px 0;
 
+  .edit {
+    color: $lightRed;
+    margin-left: 30px;
+    cursor: pointer;
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
   .productDetail {
     display: flex;
     align-items: flex-start;
@@ -71,4 +81,6 @@
 
     }
   }
+
+
 }

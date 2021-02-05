@@ -1,0 +1,17 @@
+@import '../../../assets/styles/variables';
+
+button {
+  background-color: $white !important;
+  padding: 15px 20px;
+  border: 1px solid $black;
+  width: 200px;
+  transition: .3s ease-in;
+  cursor: pointer;
+  margin: 30px auto;
+
+  &:hover {
+    background-color: $black !important;
+    color: $white;
+
+  }
+}

@@ -26,6 +26,8 @@ export class AdminFormComponent implements OnInit {
   }
 
   onSubmit() {
+
+
     if (this.product.name != '' || this.product.category != '' || this.product.imgUrl != '' || this.product.description != '') {
       this.crudService.addItem(this.product);
 
@@ -36,4 +38,5 @@ export class AdminFormComponent implements OnInit {
       this.product.price = undefined;
     }
   }
+
 }

@@ -19,7 +19,6 @@ export class AdminPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //brad
     this.crudService.getItems().subscribe(allProducts => {
       console.log(allProducts);
       this.products = allProducts;

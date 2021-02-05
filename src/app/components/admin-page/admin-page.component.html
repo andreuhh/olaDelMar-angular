@@ -32,19 +32,46 @@
                     </div>
                     <form (ngSubmit)="updateProduct(product)">
                         <div class="form-group">
-                            <input [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}" type="text" value="name" class="form-control" placeholder="Product name">
+                            <input 
+                              [(ngModel)]="product.name" 
+                              [ngModelOptions]="{standalone: true}" 
+                              type="text" value="name" 
+                              class="form-control" 
+                              placeholder="Product name"
+                            >
                         </div>
                         <div class="form-group">
-                            <input [(ngModel)]="product.category" [ngModelOptions]="{standalone: true}" type="text" value="category" class="form-control" placeholder="Product category">
+                            <input [(ngModel)]="product.category" 
+                            [ngModelOptions]="{standalone: true}" 
+                            type="text" value="category" class="form-control" 
+                            placeholder="Product category"
+                        >
                         </div>
                         <div class="form-group">
-                            <input [(ngModel)]="product.imgUrl" [ngModelOptions]="{standalone: true}" type="file" value="imgUrl" class="form-control" placeholder="Product imgUrl">
+                            <input 
+                              [(ngModel)]="product.imgUrl" 
+                              [ngModelOptions]="{standalone: true}" 
+                              type="file" value="imgUrl" class="form-control" 
+                              placeholder="Product imgUrl"
+                            >
                         </div>
                         <div class="form-group">
-                            <input [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}" type="text" value="description" class="form-control" placeholder="Product description">
+                            <input 
+                              [(ngModel)]="product.description" 
+                              [ngModelOptions]="{standalone: true}" 
+                              type="text" value="description" 
+                              class="form-control" 
+                              placeholder="Product description"
+                            >
                         </div>
                         <div class="form-group">
-                            <input [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}" type="number" value="price" class="form-control" placeholder="Product price">
+                            <input 
+                              [(ngModel)]="product.price" 
+                              [ngModelOptions]="{standalone: true}" 
+                              type="number" value="price" 
+                              class="form-control" 
+                              placeholder="Product price"
+                            >
                         </div>
                         <div class="form-group">
                             <button type="submit">Update Product</button>

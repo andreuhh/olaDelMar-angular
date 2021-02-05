@@ -7,8 +7,16 @@
         <input [(ngModel)]="product.category" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Product category">
     </div>
     <div class="form-group">
-        <input [(ngModel)]="product.imgUrl" [ngModelOptions]="{standalone: true}" type="file" class="form-control" placeholder="Product imgUrl">
-    </div>
+      <input 
+        (change)="upload($event)"
+        accept="*.png.jpg"
+        [(ngModel)]="product.imgUrl" 
+        [ngModelOptions]="{standalone: true}" 
+        type="file" class="form-control" 
+        placeholder="Product imgUrl"
+      >
+      <!--<button (click)="uploadImage()" type="submit">Upload image</button>-->
+  </div>
     <div class="form-group">
         <input [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Product description">
     </div>

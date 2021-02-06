@@ -20,6 +20,10 @@ const routes: Routes = [
     component: DetailComponent,
   },
   {
+    path: 'detail/:id',
+    component: DetailComponent,
+  },
+  {
     path: 'cart',
     component: CartComponent,
   },
@@ -34,3 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [HomeComponent, DetailComponent]

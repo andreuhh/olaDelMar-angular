@@ -18,7 +18,7 @@
         </div>
         <div class="row mt-5">
             <ng-container *ngFor="let product of products">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
+                <div [routerLink]="['/detail', product.id]" class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
                     <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
                     <h5 class="pt-3 pb-1">{{product.name}}</h5>
                     <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>

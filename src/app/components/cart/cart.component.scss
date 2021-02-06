@@ -48,3 +48,22 @@
     margin-left: 15px;
   }
 }
+
+.remove a {
+  cursor: pointer;
+  color: $lightRed;
+  border: 1px solid $lightRed;
+  padding: 10px;
+  transition: .3s ease-in;
+
+  &:hover {
+    background-color: $lightRed;
+    color: $white;
+
+  }
+}
+
+.remove span {
+  margin-left: 5px;
+  font-weight: 500;
+}

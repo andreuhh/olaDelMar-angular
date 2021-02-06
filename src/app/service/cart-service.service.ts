@@ -15,4 +15,13 @@ export class CartServiceService {
   getItems() {
     return this.products;
   }
+
+  deleteItemCart(e: number) {
+    this.products.splice(e, 1);
+  }
+
+  totalSumCart() {
+    const total = this.products.reduce((sum, products) => sum + products.price, 0);
+    return total;
+  }
 }

@@ -14,9 +14,6 @@
                         (input)="Search()"
                     >
                 </div>
-                <!--<div class="col-lg-4 col-md-5">
-                    <input type="text" placeholder="price">
-                </div>-->
                 <div class="col-lg-1 col-md-2">
                     <button>Search</button>
                 </div>
@@ -30,8 +27,7 @@
                         <h5 class="pt-3 pb-1">{{product.name}}</h5>
                         <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
                     </a>
-                        <button (click)="addToCart(item)">Add to Cart</button>
-                    
+                        <button (click)="addToCart(product)">Add to Cart</button> 
                 </div>
             </ng-container>
         </div>

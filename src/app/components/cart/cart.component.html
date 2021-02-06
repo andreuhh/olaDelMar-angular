@@ -4,34 +4,39 @@
     <h3 class="pt-3">Cart</h3>
     <div class="row">
         <div class="col-lg-6 mb-4"></div>
-        <div class="col-lg-2 mb-4">
+        <div class="col-lg-3 mb-4">
             <h6>Price</h6>
         </div>
-        <div class="col-lg-2 mb-4">
+        <!--<div class="col-lg-2 mb-4">
             <h6>Quantity</h6>
         </div>
         <div class="col-lg-2 mb-4">
             <h6>Total</h6>
-        </div>
+        </div>-->
     </div>
 
     <ng-container *ngFor="let prod of cartProducts; let e = index">
         <div class="row singleItem">
             <div class="col-lg-6 productDetail">
                 <div class="imgCont"></div>
-                <h6 class="pl-5">Nome Prodotto + img</h6>
+                <h6 class="pl-5">{{prod?.name}} </h6>
             </div>
-            <div class="col-lg-2">30.00 €</div>
-            <div class="col-lg-2">
+            <div class="col-lg-2">{{prod?.price}} €</div>
+            <!--<div class="col-lg-2">
                 <input type="number" placeholder="1">
             </div>
-            <div class="col-lg-2">30.00 €</div>
+            <div class="col-lg-2">30.00 €</div>-->
+            <div class="col-lg-3">
+                <div (click)="deleteProdFromCart(product)" class="col-lg-1 remove">
+                    <a><i class="fas fa-times"><span>Remove</span></i></a>
+                </div>
+            </div>
         </div>
     </ng-container>
 
     <div class="total pt-4 mb-3">
         <h5 class="font-weight-bold">Total :</h5>
-        <h5 class="colRed pl-3">649 €</h5>
+        <h5 class="colRed pl-3">{{total}} €</h5>
     </div>
     <div class="addProdBtn mt-3">
         <i class="fas fa-shopping-bag"></i>

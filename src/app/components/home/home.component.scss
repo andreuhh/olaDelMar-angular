@@ -52,6 +52,7 @@
   width: 100%;
   height: auto;
   top: -50px;
+
 }
 
 .fourColCont {
@@ -61,7 +62,7 @@
 
   &__item {
     i {
-      color: $gray;
+      color: $white;
       font-size: 1.7rem;
     }
   }

@@ -4,8 +4,12 @@ import { Product } from '../../models/product';
 import { FormsModule } from '@angular/forms';
 import { AngularFireStorage } from '@angular/fire/storage';
 
-//import { finalize } from 'rxjs/operators';
-//import { Observable } from 'rxjs';
+import {
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-admin-form',

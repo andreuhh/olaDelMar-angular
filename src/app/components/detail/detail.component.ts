@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartServiceService } from 'src/app/service/cart-service.service';
 import { CrudService } from 'src/app/service/crud.service';
 import { Product } from '../../models/product';
 
@@ -15,7 +16,7 @@ export class DetailComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private cartService: CrudService,
+    private cartService: CartServiceService,
     public crudService: CrudService
   ) {
 
@@ -28,13 +29,11 @@ export class DetailComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    /*this.crudService.getItems().subscribe(allProducts => {
-      console.log(allProducts);
-      this.products = allProducts;
-    });*/
-    //this.product = this.route.snapshot.paramMap.get("id");
-    //console.log(this.product)
+  ngOnInit() { }
+
+  addToCart(prod: any) {
+    this.cartService.addToCart(prod);
+    window.alert('Your product has been added to the cart!');
   }
 
 }

@@ -6,9 +6,8 @@
         <div class="col-lg-6 mt-5">
             <h4>{{product?.name}}</h4>
             <p class="pt-3 colRed font-weight-bold">Prezzo: <span>{{product?.price}}</span> €</p>
-            <div class="btnCont pt-3 pb-5">
-                <button>Add to cart</button>
-                <input type="number" placeholder="quantity">
+            <div class="pt-3 pb-5">
+                <button (click)="addToCart(product)">Add to cart</button>
             </div>
             <p class="font-weight-bold">Description</p>
             <p>{{product?.description}}</p>

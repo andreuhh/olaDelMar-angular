@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/service/crud.service';
+import { CartServiceService } from 'src/app/service/cart-service.service';
 import { Product } from '../../models/product';
 
 @Component({
@@ -16,7 +17,8 @@ export class ShopPageComponent implements OnInit {
 
   constructor(
     public crudService: CrudService,
-    private router: Router
+    private router: Router,
+    private cartService: CartServiceService
   ) { }
 
   ngOnInit(): void {
@@ -40,6 +42,11 @@ export class ShopPageComponent implements OnInit {
     } else if (this.name == '') {
       this.ngOnInit();
     }
+  }
+
+  addToCart(prod: any) {
+    this.cartService.addToCart(prod);
+    window.alert('Your product has been added to the cart!');
   }
 
 }

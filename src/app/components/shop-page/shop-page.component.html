@@ -29,8 +29,9 @@
                         <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
                         <h5 class="pt-3 pb-1">{{product.name}}</h5>
                         <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
-                        <button>Add to Cart</button>
                     </a>
+                        <button (click)="addToCart(item)">Add to Cart</button>
+                    
                 </div>
             </ng-container>
         </div>

@@ -15,41 +15,19 @@
         </div>
     </div>
 
-    <div class="row singleItem">
-        <div class="col-lg-6 productDetail">
-            <div class="imgCont"></div>
-            <h6 class="pl-5">Nome Prodotto + img</h6>
+    <ng-container *ngFor="let prod of cartProducts; let e = index">
+        <div class="row singleItem">
+            <div class="col-lg-6 productDetail">
+                <div class="imgCont"></div>
+                <h6 class="pl-5">Nome Prodotto + img</h6>
+            </div>
+            <div class="col-lg-2">30.00 €</div>
+            <div class="col-lg-2">
+                <input type="number" placeholder="1">
+            </div>
+            <div class="col-lg-2">30.00 €</div>
         </div>
-        <div class="col-lg-2">30.00 €</div>
-        <div class="col-lg-2">
-            <input type="number" placeholder="1">
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-    </div>
-
-    <div class="row singleItem">
-        <div class="col-lg-6 productDetail">
-            <div class="imgCont"></div>
-            <h6 class="pl-5">Nome Prodotto + img</h6>
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-        <div class="col-lg-2">
-            <input type="number" placeholder="1">
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-    </div>
-
-    <div class="row singleItem">
-        <div class="col-lg-6 productDetail">
-            <div class="imgCont"></div>
-            <h6 class="pl-5">Nome Prodotto + img</h6>
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-        <div class="col-lg-2">
-            <input type="number" placeholder="1">
-        </div>
-        <div class="col-lg-2">30.00 €</div>
-    </div>
+    </ng-container>
 
     <div class="total pt-4 mb-3">
         <h5 class="font-weight-bold">Total :</h5>

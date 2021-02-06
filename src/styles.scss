@@ -82,3 +82,35 @@ h5 {
 .colRed {
   color: $lightRed;
 }
+
+
+// CARD
+.cardItem {
+  cursor: pointer;
+
+  .imgCont {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  button {
+    border: 1px solid $black;
+    background-color: transparent;
+    color: $black;
+    outline: none;
+    color: $black;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    transition: .3s ease-in;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+      border: none;
+    }
+  }
+}

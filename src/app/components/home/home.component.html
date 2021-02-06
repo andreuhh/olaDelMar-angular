@@ -64,11 +64,11 @@
                 <ng-container *ngIf="i <= 3">
                     <!--<div [routerLink]="['/detail', product.id]" class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">-->
                     <div class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
-                        <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
                         <a (click)="sendObjects(product)">
+                            <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>                       
                             <h5 class="pt-3 pb-1">{{product.name}}</h5>
+                            <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
                         </a>
-                        <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
                     </div>
                 </ng-container>
             </ng-container>

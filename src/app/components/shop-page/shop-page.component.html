@@ -6,7 +6,13 @@
         <div class="container searchBar pl-0 pt-3 pb-4">
             <div class="row">
                 <div class="col-lg-11 col-md-10">
-                    <input type="text" placeholder="search">
+                    <input 
+                        type="text" 
+                        placeholder="search by name"
+                        #myInput
+                        [(ngModel)]="name"
+                        (input)="Search()"
+                    >
                 </div>
                 <!--<div class="col-lg-4 col-md-5">
                     <input type="text" placeholder="price">
@@ -18,11 +24,13 @@
         </div>
         <div class="row mt-5">
             <ng-container *ngFor="let product of products">
-                <div [routerLink]="['/detail', product.id]" class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
-                    <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
-                    <h5 class="pt-3 pb-1">{{product.name}}</h5>
-                    <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
-                    <button>Add to Cart</button>
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
+                    <a (click)="sendObjects(product)">
+                        <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
+                        <h5 class="pt-3 pb-1">{{product.name}}</h5>
+                        <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
+                        <button>Add to Cart</button>
+                    </a>
                 </div>
             </ng-container>
         </div>

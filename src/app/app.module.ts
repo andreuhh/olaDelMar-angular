@@ -19,6 +19,7 @@ import { DetailComponent } from './components/detail/detail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { CrudService } from './service/crud.service';
 import { AdminFormComponent } from './common/admin-form/admin-form.component';
@@ -38,6 +39,7 @@ import { AdminFormComponent } from './common/admin-form/admin-form.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,

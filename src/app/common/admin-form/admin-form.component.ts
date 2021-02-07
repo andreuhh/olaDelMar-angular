@@ -17,6 +17,10 @@ import {
   styleUrls: ['./admin-form.component.scss']
 })
 export class AdminFormComponent implements OnInit {
+  imgProvaPath: any;
+  myform: FormGroup;
+  isSubmitted?: boolean;
+
   product: Product = {
     name: "",
     category: "",
@@ -24,8 +28,6 @@ export class AdminFormComponent implements OnInit {
     description: "",
     price: undefined,
   }
-
-  imgProvaPath: any;
 
   path: String;
 
@@ -35,10 +37,17 @@ export class AdminFormComponent implements OnInit {
   constructor(
     private crudService: CrudService,
     private af: AngularFireStorage
-  ) { }
+  ) {
+    this.myform = new FormGroup({
+      name: new FormControl('', Validators.required),
+      category: new FormControl('', Validators.required),
+      imgUrl: new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required),
+    });
+  }
 
   ngOnInit(): void {
-
   }
 
   upload($event) {
@@ -46,7 +55,7 @@ export class AdminFormComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.isSubmitted = true;
 
     if (this.product.name != '' || this.product.category != '' || this.product.imgUrl != '' || this.product.description != '') {
       this.crudService.addItem(this.product);
@@ -56,6 +65,9 @@ export class AdminFormComponent implements OnInit {
       this.product.imgUrl = "";
       this.product.description = "";
       this.product.price = undefined;
+
+      this.isSubmitted = false;
+      window.alert('Product added in your shop!');
     }
 
 
@@ -64,4 +76,7 @@ export class AdminFormComponent implements OnInit {
     console.log(this.imgProvaPath)
   }
 
+  get formControls() {
+    return this.myform['controls'];
+  }
 }

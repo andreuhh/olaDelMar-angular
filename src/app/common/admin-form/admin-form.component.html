@@ -1,10 +1,23 @@
 <h4 class="pt-5">Admin form</h4>
-<form (ngSubmit)="onSubmit()" class="col-12">
+<form [formGroup]="myform" (ngSubmit)="onSubmit()" class="col-12">
     <div class="form-group">
-        <input [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Product name">
+        <input formControlName="name" [(ngModel)]="product.name" type="text" class="form-control" placeholder="Product name">
+        <!-- [ngModelOptions]="{standalone: true}" -->
+        <div
+          class="text-danger"
+          *ngIf="isSubmitted && formControls.name.invalid"
+        >
+          Name is required.
+        </div>
     </div>
     <div class="form-group">
-        <input [(ngModel)]="product.category" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Product category">
+        <input formControlName="category" [(ngModel)]="product.category" type="text" class="form-control" placeholder="Product category">
+        <div
+          class="text-danger"
+          *ngIf="isSubmitted && formControls.category.invalid"
+        >
+          Category is required.
+        </div>
     </div>
     <div class="form-group">
       <input 
@@ -18,10 +31,22 @@
       <!--<button (click)="uploadImage()" type="submit">Upload image</button>-->
   </div>
     <div class="form-group">
-        <input [(ngModel)]="product.description" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Product description">
+        <input formControlName="description" [(ngModel)]="product.description" type="text" class="form-control" placeholder="Product description">
+        <div
+          class="text-danger"
+          *ngIf="isSubmitted && formControls.description.invalid"
+        >
+          Description is required.
+        </div>
     </div>
     <div class="form-group">
-        <input [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="Product price">
+        <input formControlName="price" [(ngModel)]="product.price" type="number" class="form-control" placeholder="Product price">
+        <div
+          class="text-danger"
+          *ngIf="isSubmitted && formControls.price.invalid"
+        >
+          Price is required.
+        </div>
     </div>
     <div class="form-group">
         <button type="submit">Add product</button>

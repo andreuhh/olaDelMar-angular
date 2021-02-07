@@ -17,24 +17,30 @@
             </div>
         </div>
         <div class="row mt-5">
-            <ng-container *ngFor="let product of products">
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
-                    <a (click)="sendObjects(product)">
-                        <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
-                        <h5 class="pt-3 pb-1">{{product.name}}</h5>
-                        <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
-                    </a>
-                        <button (click)="addToCart(product)">Add to Cart</button> 
-                </div>
+            <ng-container *ngIf="products; else loading">
+                <ng-container *ngFor="let product of products">
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-3 cardItem">
+                        <a (click)="sendObjects(product)">
+                            <div [ngStyle]="{backgroundImage: 'url(' + product.imgUrl + ') '}" class="imgCont imgCont--1"></div>
+                            <h5 class="pt-3 pb-1">{{product.name}}</h5>
+                            <p class="mt-0 mb-0 pb-3">{{product.price}} €</p>
+                        </a>
+                            <button (click)="addToCart(product)">Add to Cart</button> 
+                    </div>
+                </ng-container>
             </ng-container>
+            <ng-template #loading>
+                <h5>Loading...</h5>
+            </ng-template>
+            
         </div>
           
-        <div class="goToShop mt-5">
+        <!--<div class="goToShop mt-5">
             <i class="fas fa-angle-left"></i>
             <a routerLink="/shop" class="font-weight-bold">1</a>
             <a routerLink="/shop" class="font-weight-bold">2</a>
             <i class="fas fa-angle-right"></i>
-        </div>
+        </div>-->
     </div>  
 </section>
 

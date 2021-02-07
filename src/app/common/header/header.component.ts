@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartServiceService } from 'src/app/service/cart-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   hamburgerMenuOpen = false;
+  cartProducts: any[] | undefined;
 
-  constructor() { }
+  constructor(
+    private cartService: CartServiceService,
+  ) { }
 
   ngOnInit(): void {
+    this.cartProducts = this.cartService.getItems();
+    console.log(this.cartProducts.length);
   }
 
   clickMenu(): void { this.hamburgerMenuOpen = !this.hamburgerMenuOpen }

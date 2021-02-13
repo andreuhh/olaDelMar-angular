@@ -17,6 +17,16 @@
   }
 }
 
+.loading {
+  text-align: center;
+  margin: 0 auto !important;
+}
+
+.spinner-border {
+  color: $lightBlue !important;
+
+}
+
 @media (max-width: 540px) {
   .searchBar {
     padding-left: 0 !important;

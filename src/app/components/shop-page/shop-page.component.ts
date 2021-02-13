@@ -12,8 +12,8 @@ import { Product } from '../../models/product';
 export class ShopPageComponent implements OnInit {
   products: Product[] = [];
   name: any;
-  // NB URL IMMAGINE CORRETTA
-  //url?: firebase.default.storage.UploadTaskSnapshot;
+
+  loading = false;
 
   constructor(
     public crudService: CrudService,
@@ -22,8 +22,10 @@ export class ShopPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.crudService.getItems().subscribe(allProducts => {
       console.log(allProducts);
+      this.loading = false;
       this.products = allProducts;
     });
   }

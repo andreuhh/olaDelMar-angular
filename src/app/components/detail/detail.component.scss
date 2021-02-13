@@ -5,7 +5,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 400px;
+  width: 30%;
+  height: 500px;
 }
 
 .colRed {
@@ -22,4 +23,8 @@ button {
 input {
   margin-left: 20px;
   padding: 8px 10px;
+}
+
+.col-lg-7 {
+  padding-left: 50px;
 }

@@ -8,6 +8,7 @@ import { CartServiceService } from 'src/app/service/cart-service.service';
 })
 export class CartComponent implements OnInit {
   cartProducts: any[] | undefined;
+
   $cartProd: any;
   constructor(
     private cartService: CartServiceService,
@@ -27,6 +28,8 @@ export class CartComponent implements OnInit {
     return this.cartService.totalSumCart();
   }
 
-
+  checkOut() {
+    window.alert('Your order has been successfully received! Continue to keep the planet clean');
+  }
 
 }

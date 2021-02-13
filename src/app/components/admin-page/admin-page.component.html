@@ -11,7 +11,7 @@
         <div class="col-lg-2 mb-4"></div>
     </div>
 
-    <ng-container *ngIf="products?.length > 0;else noProducts">
+    <ng-container *ngIf="products?.length">
         <ng-container *ngFor="let product of products">
             <div class="row singleItem">
                 <div class="col-lg-6 productDetail">
@@ -81,33 +81,13 @@
             </div>
         </ng-container>
     </ng-container> 
-    <ng-template #noProducts>
-        <p>You don't have any products in your shop</p>
-    </ng-template>   
-
-    <!-- Admin form -->
-    <!--<div class="form-group">
-        <input [(ngModel)]="name" type="text" class="form-control" placeholder="Product name">
-    </div>
-    <div class="form-group">
-        <input [(ngModel)]="category" type="text" class="form-control" placeholder="Product category">
-    </div>
-    <div class="form-group">
-        <input [(ngModel)]="imgUrl" type="file" class="form-control" placeholder="Product imgUrl">
-    </div>
-    <div class="form-group">
-        <input [(ngModel)]="description" type="text" class="form-control" placeholder="Product description">
-    </div>
-    <div class="form-group">
-        <input [(ngModel)]="price" type="number" class="form-control" placeholder="Product price">
-    </div>
-    <div class="form-group">
-        <button (click)="createProduct()" [disabled]="!name || !category || !imgUrl || !description || !price">Add product</button>
-    </div>
-    <div class="form-group">
-        <h5>{{this.message}}</h5>
-    </div>-->
-
+    <ng-container *ngIf="this.loading">
+        <div class="loading">
+            <div class="spinner-border" role="status"></div>
+            <h5 class="pt-1">Loading...</h5>
+        </div>
+    </ng-container>
+      
     <app-admin-form></app-admin-form>
 
 </div>

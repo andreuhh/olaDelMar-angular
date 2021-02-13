@@ -1,5 +1,15 @@
 @import '../../../assets/styles/variables';
 
+.loading {
+  text-align: center;
+  margin: 100px auto !important;
+}
+
+.spinner-border {
+  color: $lightBlue !important;
+
+}
+
 .singleItem {
   border-top: 1px solid $gray;
   //border-bottom: 1px solid $gray;
@@ -81,6 +91,4 @@
 
     }
   }
-
-
 }

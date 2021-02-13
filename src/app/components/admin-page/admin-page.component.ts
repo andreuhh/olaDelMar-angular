@@ -13,15 +13,18 @@ export class AdminPageComponent implements OnInit {
   products: Product[];
   editState: boolean = false;
   productToEdit: Product;
+  loading = false;
 
   constructor(
     public crudService: CrudService
   ) { }
 
   ngOnInit() {
+    this.loading = true;
     this.crudService.getItems().subscribe(allProducts => {
       console.log(allProducts);
       this.products = allProducts;
+      this.loading = false;
     });
   }
 

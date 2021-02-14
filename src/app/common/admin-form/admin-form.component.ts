@@ -70,7 +70,6 @@ export class AdminFormComponent implements OnInit {
       window.alert('Product added in your shop!');
     }
 
-
     this.af.upload("/files" + Math.random() + this.path, this.path);
 
     console.log(this.imgProvaPath)
